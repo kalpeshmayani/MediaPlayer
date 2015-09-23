@@ -85,6 +85,11 @@ public class MainActivity extends Activity implements OnClickListener {
 		
 		mediaPlayer = new MediaPlayer();
 		mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+		mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+			public void onCompletion(MediaPlayer mp) {
+				next();
+			}
+		});
 		
 		tvname = (TextView) findViewById(R.id.tvname);
 		
